@@ -8,9 +8,9 @@ var app = express();
 
 // Require mongoose and mongodb objectid
 var mongoose = require('mongoose');
-
+var mongolab = require('mongo');
 // Database configuration
-mongoose.connect('mongodb://localhost/nytreact');
+mongoose.connect(mongolab || 'mongodb://localhost/nytreact');
 var db = mongoose.connection;
 
 // Show any mongoose errors
