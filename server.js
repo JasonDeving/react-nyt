@@ -10,8 +10,8 @@ var app = express();
 var mongoose = require('mongoose');
 // var mongolab = require('mongo');
 // Database configuration
-// mongoose.connect('mongodb://localhost/nytreact');
-mongoose.connect('mongodb://jasonchan:jason@ds149567.mlab.com:49567/heroku_hfnknc0z');
+mongoose.connect('mongodb://localhost/nytreact');
+
 var db = mongoose.connection;
 
 // Show any mongoose errors
