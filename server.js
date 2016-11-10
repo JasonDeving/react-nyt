@@ -44,6 +44,7 @@ app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, './public', 'index.html'))
 });
 // mongoose logic goes here
+require("./controllers/api-routes.js")(app)
 
 
 // Listen on port 3000 or env port

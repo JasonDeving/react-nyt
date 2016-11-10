@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var SavedArticle = require('./models/savedArticleModel');
+var SavedArticle = require('../models/savedArticleModel');
 
 module.exports = function(app) {
 	// Get requested
@@ -33,6 +33,14 @@ module.exports = function(app) {
 	})
 	// when user hits delete
 	app.delete('/api/saved/:id', function(req, res){
-		
+		SavedArticle
+			.remove({_id: req.params.id})
+			.exec(function(err){
+				if(err) {
+					res.json({status: 'err'})
+				} else {
+					res.json({status: 'deleted'})
+				}
+			})
 	})
 }
